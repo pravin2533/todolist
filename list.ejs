@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1> <%= kindofday %> </h1>
+  </div>
+
+<% newlistitems.forEach(function(ite){%>
+  <div class="box">
+      <form  action="/delete" method="post">
+        <input type="checkbox" onchange="this.form.submit()" name="checkbox" value="<%= ite._id %>">
+        <span class="box"><%=ite.name %></span>
+      <%})%>
+
+</form>
+
+
+
+
+    <!-- <% for(var i=0;i<newlistitems.length;i++) { %>
+
+    <div class="item">
+      <input type="checkbox">
+      <p><%=newlistitems[i]%></p>
+    </div>
+    <% } %> -->
+
+
+
+
+
+
+    <form class="item" action="<%= route %>" method="post">
+
+      <input type="text" name="newitem" placeholder="newitem">
+      <button type="submit" name="button" placeholder="newitem">+</button>
+
+
+
+  </div>
+
+
+</body>
+<footer>
+    <p>copyright @pravin</p>
+</footer>
+
+
+</html>
